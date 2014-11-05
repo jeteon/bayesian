@@ -15,7 +15,7 @@ High Level
 
 ::
 
-  from bayesian import classify, classify_file
+  from bayesian import classify, classify_file, classify_folder, classify_normal
 
   spams = ["buy viagra", "dear recipient", "meet sexy singles"] # etc
   genuines = ["let's meet tomorrow", "remember to buy milk"]
@@ -82,7 +82,7 @@ Low Level
 
   # Use str.split to extract features/events/words from the corpus and build
   # the model.
-  model = bayesian.extract_events_odds(instances, str.split)
+  model = b.extract_events_odds(instances, str.split)
   # Create a new Bayes instance with 10%/90% priors on emails being genuine.
   b = Bayes({'spam': .9, 'genuine': .1})
   # Update beliefs with features/events/words from an email.
